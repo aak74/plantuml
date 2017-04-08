@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Get image from plantuml.com</title>
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pako/1.0.5/pako_deflate.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<h1>Get image from plantuml.com</h1>
+<div>
+<textarea id="uml-text" name="uml" rows="20" cols="80">
+@startuml
+start
+if (multiprocessor?) then (yes)
+  fork
+    :Treatment 1;
+  fork again
+    :Treatment 2;
+  end fork
+else (monoproc)
+  :Treatment 1;
+  :Treatment 2;
+endif
+@enduml
+</textarea><br/>
+<button id="get-image" data-text-selector="#uml-text" data-image-selector="#uml-image">Get new image</button>
+</div>
+<h2>Image from <a href="//plantuml.com" target="_blank">plantuml.com</a></h2>
+<img id="uml-image" src="http://www.plantuml.com/plantuml/img/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000">
+</body>
+</html>
